@@ -4,6 +4,7 @@ import api from "../services/api";
 import { Entypo } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
+import Rating from '../Rating';
 
 const Home: React.FC = () => {
   const [book, setBook] = useState([]);
@@ -41,6 +42,7 @@ const Home: React.FC = () => {
                   <Text><Entypo name="user" size={24} color="black" /> {item.author}</Text>
                   <Text><FontAwesome name="book" size={24} color="black" /> {item.title}</Text>
                   <Text><Feather name="link" size={24} color="black" /> {item.url}</Text>
+                  <Rating rating={item.rate}/>
                 </View>       
 
           )} 
@@ -81,12 +83,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 15
+    marginTop: 15,
   },
   infoBook:{
     backgroundColor: 'skyblue',
     borderRadius: 5,
-    height: 100,
+    height: 130,
     width: 400,
     alignItems: 'flex-start',
     justifyContent: 'space-around',
